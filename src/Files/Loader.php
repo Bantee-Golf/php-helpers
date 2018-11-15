@@ -9,9 +9,13 @@ class Loader
 
 	public static function includeAllFilesFromDir($dirPath)
 	{
+		$includedFiles = get_included_files();
+
 		foreach (glob($dirPath . "/*.php") as $filename)
 		{
-			include $filename;
+			if (!in_array($filename, $includedFiles)) {
+				include $filename;
+			}
 		}
 	}
 
