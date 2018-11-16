@@ -19,4 +19,19 @@ class Loader
 		}
 	}
 
+	public static function includeAllFilesFromDirRecursive($dirPath)
+	{
+		/** @var \SplFileInfo $filename */
+		$filtered = [];
+		foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dirPath)) as $file)
+		{
+			if (!in_array($file->getPathname(), get_included_files())) {
+				if ($file->getExtension() === 'php') {
+					$filtered[] = $file;
+					include($file->getPathname());
+				}
+			}
+		}
+	}
+
 }
