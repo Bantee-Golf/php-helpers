@@ -57,8 +57,8 @@ class Arr
 			// iterate through final leaf nodes
 			foreach ($subset as $subsetRow) {
 				foreach ($array as $sourceRow) {
-					if (array_intersect($sourceRow, $subsetRow) == $subsetRow) {
-						$results[] = $subsetRow;
+					if (array_intersect($sourceRow, $subsetRow) == $sourceRow) {
+						$results[] = $sourceRow;
 					}
 				}
 			}
