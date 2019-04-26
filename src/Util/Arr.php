@@ -57,6 +57,7 @@ class Arr
 			// iterate through final leaf nodes
 			foreach ($subset as $subsetRow) {
 				foreach ($array as $sourceRow) {
+					$subsetRow = self::removeChildArrays($subsetRow);
 					if (array_intersect($sourceRow, $subsetRow) == $sourceRow) {
 						$results[] = $sourceRow;
 					}
@@ -65,6 +66,20 @@ class Arr
 		}
 
 		return $results;
+	}
+
+
+	public static function removeChildArrays($array)
+	{
+		$response = [];
+		foreach ($array as $key => $value) {
+			if (is_array($value)) {
+				$response[$key] = json_encode($value);
+			} else {
+				$response[$key] = $value;
+			}
+		}
+		return $response;
 	}
 
 
