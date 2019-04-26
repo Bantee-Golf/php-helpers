@@ -91,6 +91,21 @@ becomes
 ]
 ```
 
+###### Recursive Intersection
+
+```
+// get matching subset of array. Similar to `array_intersect`, but does recursively.
+\EMedia\PHPHelpers\Util\Arr::intersectRecursive($source, $subset);
+```
+
+###### Is an associative array?
+
+```
+// Check if an array is an associative array
+\EMedia\PHPHelpers\Util\Arr::isAssocArray($array);
+```
+
+
 #### String Helpers
 
 ```
