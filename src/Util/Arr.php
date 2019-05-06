@@ -47,7 +47,7 @@ class Arr
 
 						//if the value is array, it will do the recursive
 						if (is_array($value)) {
-							$loopResults = self::intersectRecursive($subset[$key], $filteredSource, $results);
+							$loopResults = self::intersectRecursive($filteredSource, $subset[$key], $results);
 							$results[$key] = $loopResults;
 						}
 					}
@@ -58,8 +58,9 @@ class Arr
 			foreach ($subset as $subsetRow) {
 				foreach ($array as $sourceRow) {
 					$subsetRow = self::removeChildArrays($subsetRow);
-					if (array_intersect($sourceRow, $subsetRow) == $sourceRow) {
-						$results[] = $sourceRow;
+					$sourceRow = self::removeChildArrays($sourceRow);
+					if (array_intersect($subsetRow, $sourceRow) == $subsetRow) {
+						$results[] = $subsetRow;
 					}
 				}
 			}

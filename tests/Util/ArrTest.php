@@ -93,6 +93,41 @@ class ArrTest extends \PHPUnit\Framework\TestCase
 		self::assertTrue($response == $subset);
 	}
 
+	public function test_Arr_intersectRecursive_simple_subset_match_4()
+	{
+		$input = [
+			'payload' => [
+				[
+					'item' => 'item 1',
+					'desc' => 'desc',
+					'is_read' => true,
+				],
+				[
+					'item' => 'SENT_SINGLE_DEVICE_SEED_NOTIFICATION_2',
+					'is_read' => false,
+					'badge_count' => '',
+				],
+				[
+					'item' => 'item 3',
+					'desc' => 'desc',
+				]
+			]
+		];
+
+		$subset = [
+			'payload' => [
+				[
+					'item' => 'SENT_SINGLE_DEVICE_SEED_NOTIFICATION_2',
+					'is_read' => true,
+				],
+			]
+		];
+
+		$response = \EMedia\PHPHelpers\Util\Arr::intersectRecursive($input, $subset);
+
+		self::assertFalse($response == $subset);
+	}
+
 	public function test_isAssocArray_detects_assoc_array()
 	{
 		$array = [
