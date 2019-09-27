@@ -106,7 +106,7 @@ class FileEditor
 		$regex = '/(\$' . $propertyName . ')\s?=\s?\[(.*)\];/Us';
 
 		preg_match_all($regex, $content, $matches);
-		if (count($matches) === 3) {
+		if (is_countable($matches) && count($matches) === 3) {
 			$elementBlock = $matches[2][0];
 			$newContent = $elementBlock . '    ' . $value . ',' . PHP_EOL . "    ";
 			$newContent = str_replace($elementBlock, $newContent, $content);
@@ -157,7 +157,7 @@ class FileEditor
 		$regex = "/('" . $propertyName . "')\s?=>\s?\[(.*)\]/Us";
 
 		preg_match_all($regex, $content, $matches);
-		if (count($matches) === 3) {
+		if (is_countable($matches) && count($matches) === 3) {
 			$elementBlock = $matches[2][0];
 			$newContent = $elementBlock . '    ' . $value . ',' . PHP_EOL . "    ";
 			$newContent = str_replace($elementBlock, $newContent, $content);

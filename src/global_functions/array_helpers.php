@@ -171,3 +171,20 @@ if (!function_exists('implode_not_empty'))
 		return implode($glue, $pieces);
 	}
 }
+
+if (!function_exists('is_countable'))
+{
+	/**
+	 *
+	 * Returns TRUE if the parameter is an countable entity
+	 * array or an instance of Countable class
+	 *
+	 * @param $var
+	 *
+	 * @return boolean
+	 */
+	function is_countable($var)
+	{
+		return is_array($var) || $var instanceof Countable;
+	}
+}
