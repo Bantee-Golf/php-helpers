@@ -153,5 +153,4 @@ class ArrayHelpersTest extends \PHPUnit\Framework\TestCase
             $this->assertEquals($result[$newKey][0]["age"], $arr[$index]["age"]);
         }
     }
-
 }
