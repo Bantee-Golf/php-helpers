@@ -112,27 +112,6 @@ class ArrayHelpersTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-//    /**
-//     * @test
-//     * @throws Exception
-//     */
-//    public function test__array_helpers__array_key_by__converts_to_assoc_array_with_value_for_key()
-//    {
-//        $arr = [
-//            ['name' => 'john', 'age' => 45],
-//            ['name' => 'jane', 'age' => 32],
-//        ];
-//
-//        $key = 'name';
-//
-//        $result = array_key_by($arr, $key);
-//
-//        foreach($arr as $index => $original) {
-//            $newKey = $arr[$index][$key];
-//            $this->assertEquals($result[$newKey]["age"], $arr[$index]["age"]);
-//        }
-//    }
-
     /**
      * @test
      * @throws Exception
