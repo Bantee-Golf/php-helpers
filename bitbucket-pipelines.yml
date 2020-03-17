@@ -1,0 +1,8 @@
+image: php:7.2-fpm
+
+pipelines:
+  default:
+    - step:
+        script:
+          - composer install
+          - ./vendor/bin/phpunit
