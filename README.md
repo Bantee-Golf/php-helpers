@@ -95,7 +95,7 @@ becomes
 
 ```
 // get matching subset of array. Similar to `array_intersect`, but does recursively.
-\EMedia\PHPHelpers\Util\Arr::intersectRecursive($source, $subset);
+\EMedia\PHPHelpers\Util\Arr::intersectRecursiveintersectRecursiveintersectRecursive($source, $subset);
 ```
 
 ###### Is an associative array?
