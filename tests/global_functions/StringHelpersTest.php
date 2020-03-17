@@ -48,5 +48,56 @@ class StringHelpersTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * @test
+     */
+    public function test__string_helpers__str_with_trailing_slash__appends_a_slash()
+    {
+        $strings = [
+            'foo' => 'foo/',
+            'bar/' => 'bar/',
+            '/baz/fizz.' => '/baz/fizz./',
+            '' => '/'
+        ];
+
+        foreach ($strings as $string => $result) {
+            $this->assertEquals($result, str_with_trailing_slash($string));
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function test__string_helpers__str_without_trailing_slash__removes_a_trailing_slash()
+    {
+        $strings = [
+            'foo' => 'foo',
+            'bar/' => 'bar',
+            '/baz/fizz' => '/baz/fizz',
+            '/' => ''
+        ];
+
+        foreach ($strings as $string => $result) {
+            $this->assertEquals($result, str_without_trailing_slash($string));
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function test__string_helpers__str_without_trailing_slash__removes_a_leading_slash()
+    {
+        $strings = [
+            'foo' => 'foo',
+            '/bar/' => 'bar/',
+            '/baz/fizz' => 'baz/fizz',
+            '/' => ''
+        ];
+
+        foreach ($strings as $string => $result) {
+            $this->assertEquals($result, str_without_leading_slash($string));
+        }
+    }
+
 
 }

@@ -76,6 +76,12 @@ if (!function_exists('str_without_leading_slash')) {
 	 */
 	function str_without_leading_slash($path)
 	{
-		return trim($path, '/');
+        $firstChar = $path[0];
+        $hasLeadingSlash = $firstChar === "/";
+        if (!$hasLeadingSlash) {
+            return $path;
+        }
+
+        return ltrim($path, $firstChar);
 	}
 }

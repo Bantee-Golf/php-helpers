@@ -30,7 +30,7 @@ class LoaderTest extends TestCase
         $classes = [
             static::$dir => 'ClassOne',
             static::$dir => 'ClassTwo',
-            static::$subdir => 'SubDirectoryClass'
+            static::$subdir => 'ChildClass'
         ];
 
         foreach ($classes as $directory => $class) {
@@ -61,8 +61,8 @@ class LoaderTest extends TestCase
     public function test_Loader_includes_class_in_all_subdirectories_too()
     {
         $classes = [
-            static::$dir => 'ClassOne',
-            static::$dir => 'ClassTwo',
+            static::$dir => 'ParentClassOne',
+            static::$dir => 'ParentClassTwo',
             static::$subdir => 'SubDirectoryClass'
         ];
 
