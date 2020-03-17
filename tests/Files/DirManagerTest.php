@@ -47,5 +47,5 @@ class DirManagerTest extends TestCase
         $this->assertTrue($success);
         $this->assertTrue(is_dir(static::$testDirName));
     }
-    
+
 }
