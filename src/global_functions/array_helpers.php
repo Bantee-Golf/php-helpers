@@ -140,6 +140,17 @@ if (!function_exists('array_key_by')) {
 	 */
 	function array_key_by($array, $keyBy)
 	{
+//        $result = [];
+//
+//        foreach ($array as $item) {
+//            $newKey = $item[$keyBy];
+//            unset($item[$keyBy]);
+//            $result[$newKey] = $item;
+//        }
+//
+//        return $result;
+
+
 		$newValues = [];
 
 		foreach ($array as $key => $value) {
