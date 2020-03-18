@@ -4,7 +4,6 @@
   "type": "project",
   "require": {
     "php": ">=7.2.5",
-    "illuminate/support": "^5.7|^6.0|^7.0",
     "nesbot/carbon": "1.*|2.*",
     "ext-dom": "*"
   },

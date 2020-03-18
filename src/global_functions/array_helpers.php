@@ -83,39 +83,6 @@ if (!function_exists('array_keys_snake_case'))
 	}
 }
 
-
-if (!function_exists('array_keys_snake_case'))
-{
-	/**
-	 * Convert camelCase type array keys to snake case
-	 *
-	 * @param array $mixed
-	 * @param bool|true $recursive
-	 */
-	function array_keys_snake_case(&$mixed, $recursive = true)
-	{
-		if (!function_exists('snake_case')) throw new \Exception("Function 'snake_case' is undefined.");
-		array_keys_replace($mixed, 'snake_case', $recursive);
-	}
-}
-
-
-/**
- * Convert array keys to camelCase
- *
- * @param $mixed
- * @param bool|true $recursive
- * @throws Exception
- */
-if (!function_exists('array_keys_camel_case'))
-{
-	function array_keys_camel_case(&$mixed, $recursive = true)
-	{
-		if (!function_exists('camel_case')) throw new \Exception("Function 'camel_case' is undefined.");
-		array_keys_replace($mixed, 'camel_case', $recursive);
-	}
-}
-
 if (!function_exists('array_key_by')) {
 	/**
 	 *
