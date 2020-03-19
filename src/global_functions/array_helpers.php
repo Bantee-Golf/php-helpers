@@ -40,7 +40,7 @@ if (!function_exists('replace_array_key'))
 	}
 }
 
-if (!function_exists('array_keys_snake_case'))
+if (!function_exists('array_keys_replace'))
 {
 	/**
 	 * Replace keys of a given array based on a given function
