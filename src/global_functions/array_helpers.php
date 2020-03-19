@@ -94,8 +94,8 @@ if (!function_exists('array_keys_snake_case'))
 	 */
 	function array_keys_snake_case(&$mixed, $recursive = true)
 	{
-		if (!function_exists('snake_case')) throw new \Exception("Function 'snake_case' is undefined.");
-		array_keys_replace($mixed, 'snake_case', $recursive);
+		if (!method_exists(\Illuminate\Support\Str::class, 'snake')) throw new \Exception("Function '\Illuminate\Support\Str::snake' is undefined.");
+		array_keys_replace($mixed, '\Illuminate\Support\Str::snake', $recursive);
 	}
 }
 
@@ -111,8 +111,8 @@ if (!function_exists('array_keys_camel_case'))
 {
 	function array_keys_camel_case(&$mixed, $recursive = true)
 	{
-		if (!function_exists('camel_case')) throw new \Exception("Function 'camel_case' is undefined.");
-		array_keys_replace($mixed, 'camel_case', $recursive);
+        if (!method_exists(\Illuminate\Support\Str::class, 'camel')) throw new \Exception("Function '\Illuminate\Support\Str::camel' is undefined.");
+		array_keys_replace($mixed, '\Illuminate\Support\Str::camel', $recursive);
 	}
 }
 
