@@ -1,6 +1,6 @@
 ## PHP Helper Functions
 
-A library of common PHP helper functions and classes. Supports PHP 5.6.
+A library of common PHP helper functions and classes. Supports PHP 6 and 7.
 
 Only add Non-laravel functions to this package. For Laravel dependent code, refer to [Laravel Helpers](https://bitbucket.org/elegantmedia/laravel-helpers/src) library.
 
